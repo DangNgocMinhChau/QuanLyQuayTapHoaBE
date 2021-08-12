@@ -13,6 +13,8 @@ public class Quyen {
     private Long id;
     private String ma;
     private String ten;
+    private String nguoiTao;
+    private Long idNguoiTao;
     private String ngayTaoBanGhi;
     private String ngayChinhSua;
     private Boolean flag;
@@ -83,5 +85,21 @@ public class Quyen {
 
     public void setQuanLyTaiKhoans(Set<QuanLyTaiKhoan> quanLyTaiKhoans) {
         this.quanLyTaiKhoans = quanLyTaiKhoans;
+    }
+
+    public String getNguoiTao() {
+        return nguoiTao;
+    }
+
+    public void setNguoiTao(String nguoiTao) {
+        this.nguoiTao = nguoiTao;
+    }
+
+    public Long getIdNguoiTao() {
+        return idNguoiTao;
+    }
+
+    public void setIdNguoiTao(Long idNguoiTao) {
+        this.idNguoiTao = idNguoiTao;
     }
 }

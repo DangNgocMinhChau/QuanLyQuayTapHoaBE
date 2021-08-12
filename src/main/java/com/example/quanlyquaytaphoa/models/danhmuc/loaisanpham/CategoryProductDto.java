@@ -1,6 +1,6 @@
-package com.example.quanlyquaytaphoa.models.danhmuc.quyen;
+package com.example.quanlyquaytaphoa.models.danhmuc.loaisanpham;
 
-public class QuyenDto {
+public class CategoryProductDto {
     private Long id;
     private String ma;
     private String ten;
@@ -10,7 +10,7 @@ public class QuyenDto {
     private String ngayChinhSua;
     private Boolean flag;
 
-    public QuyenDto() {
+    public CategoryProductDto() {
     }
 
     public String getNgayTaoBanGhi() {

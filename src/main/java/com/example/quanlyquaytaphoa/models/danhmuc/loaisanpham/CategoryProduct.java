@@ -1,6 +1,15 @@
-package com.example.quanlyquaytaphoa.models.danhmuc.quyen;
+package com.example.quanlyquaytaphoa.models.danhmuc.loaisanpham;
 
-public class QuyenDto {
+
+import com.example.quanlyquaytaphoa.models.quanlytaikhoan.QuanLyTaiKhoan;
+
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
+public class CategoryProduct {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     private Long id;
     private String ma;
     private String ten;
@@ -10,7 +19,16 @@ public class QuyenDto {
     private String ngayChinhSua;
     private Boolean flag;
 
-    public QuyenDto() {
+    @OneToMany(mappedBy = "quyen")
+    private Set<QuanLyTaiKhoan> quanLyTaiKhoans;
+
+    public CategoryProduct() {
+    }
+
+    public CategoryProduct(String ma, String ten, Set<QuanLyTaiKhoan> quanLyTaiKhoans) {
+        this.ma = ma;
+        this.ten = ten;
+        this.quanLyTaiKhoans = quanLyTaiKhoans;
     }
 
     public String getNgayTaoBanGhi() {
@@ -59,6 +77,14 @@ public class QuyenDto {
 
     public void setTen(String ten) {
         this.ten = ten;
+    }
+
+    public Set<QuanLyTaiKhoan> getQuanLyTaiKhoans() {
+        return quanLyTaiKhoans;
+    }
+
+    public void setQuanLyTaiKhoans(Set<QuanLyTaiKhoan> quanLyTaiKhoans) {
+        this.quanLyTaiKhoans = quanLyTaiKhoans;
     }
 
     public String getNguoiTao() {

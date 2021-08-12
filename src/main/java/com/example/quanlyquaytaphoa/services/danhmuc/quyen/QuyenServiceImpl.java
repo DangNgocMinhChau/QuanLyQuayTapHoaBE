@@ -28,6 +28,8 @@ public class QuyenServiceImpl implements QuyenService {
             Quyen quyen = new Quyen();
             quyen.setMa(quyenDto.getMa());
             quyen.setTen(quyenDto.getTen());
+            quyen.setNguoiTao(quyenDto.getNguoiTao());
+            quyen.setIdNguoiTao(quyenDto.getIdNguoiTao());
             quyen.setNgayTaoBanGhi(quyenDto.getNgayTaoBanGhi());
             quyen.setFlag(true);
             quyenRepository.save(quyen);
@@ -35,6 +37,8 @@ public class QuyenServiceImpl implements QuyenService {
             resultCreate.setId(quyen.getId());
             resultCreate.setMa(quyenDto.getMa());
             resultCreate.setTen(quyenDto.getTen());
+            resultCreate.setNguoiTao(quyenDto.getNguoiTao());
+            resultCreate.setIdNguoiTao(quyenDto.getIdNguoiTao());
             result.put("result", resultCreate);
             result.put("msg", "Thêm mới " + quyenDto.getTen() + " thành công");
             result.put("status", true);
@@ -53,6 +57,8 @@ public class QuyenServiceImpl implements QuyenService {
             object.setId(quyenDto.getId() != null ? quyenDto.getId() : object.getId());
             object.setMa(quyenDto.getMa() != null ? quyenDto.getMa() : object.getMa());
             object.setTen(quyenDto.getTen() != null ? quyenDto.getTen() : object.getTen());
+            object.setNguoiTao(quyenDto.getNguoiTao() != null ? quyenDto.getNguoiTao() : object.getNguoiTao());
+            object.setIdNguoiTao(quyenDto.getIdNguoiTao() != null ? quyenDto.getIdNguoiTao() : object.getIdNguoiTao());
             object.setNgayChinhSua(quyenDto.getNgayChinhSua());
 
             quyenRepository.save(object);
@@ -76,6 +82,8 @@ public class QuyenServiceImpl implements QuyenService {
                 quyenDto.setId(quyen.getId());
                 quyenDto.setMa(quyen.getMa());
                 quyenDto.setTen(quyen.getTen());
+                quyenDto.setNguoiTao(quyen.getNguoiTao());
+                quyenDto.setIdNguoiTao(quyen.getIdNguoiTao());
                 result.put("result", quyenDto);
                 result.put("status", true);
             }
@@ -98,6 +106,8 @@ public class QuyenServiceImpl implements QuyenService {
                 quyenDto.setId(quyen.getId());
                 quyenDto.setMa(quyen.getMa());
                 quyenDto.setTen(quyen.getTen());
+                quyenDto.setNguoiTao(quyen.getNguoiTao());
+                quyenDto.setIdNguoiTao(quyen.getIdNguoiTao());
                 if (quyen.getFlag()) {
                     quyenDtoList.add(quyenDto);
                 }
